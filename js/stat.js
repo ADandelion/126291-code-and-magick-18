@@ -57,7 +57,7 @@ window.renderStatistics = function (ctx, players, times) {
     ctx.fillStyle = '#000';
     ctx.fillText(players[i], BAR_X + NAMES_GAP * i, TEXT_Y);
     ctx.fillText(Math.ceil(times[i]), BAR_X + NAMES_GAP * i, ((BAR_Y + (-BAR_HEIGHT * times[i]) / maxTime) - GAP));
-    ctx.fillStyle = 'hsl(240, 100%, ' + randomInteger(10, 100) + ' %)';
+    ctx.fillStyle = 'hsl(240, 100%, ' + randomInteger(10, 100) + '%)';
 
     if (players[i] === 'Вы') {
       ctx.fillStyle = 'rgba(255, 0, 0, 1)';
