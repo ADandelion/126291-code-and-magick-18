@@ -27,7 +27,7 @@ var renderCloud = function (ctx, x, y, color) {
 
 //  Максимальный элемент в массиве TIMES
 var getMaxElement = function (arr) {
-var maxElement = arr[0];
+  var maxElement = arr[0];
   for (var i = 1; i < arr.length; i++) {
     if (maxElement < arr[i]) {
       maxElement = arr[i];
