@@ -14,7 +14,7 @@ var BAR_Y = 240;
 var NAMES_GAP = 90;
 var TEXT_Y = 260;
 
-var renderCloud = function(ctx, x, y, color) {
+var renderCloud = function (ctx, x, y, color) {
 
   ctx.fillStyle = color;
   ctx.fillRect(x, y, CLOUD_WIDTH, CLOUD_HEIGHT);
@@ -25,9 +25,8 @@ var renderCloud = function(ctx, x, y, color) {
 
 };
 
-//Максимальный элемент в массиве TIMES
-
-var getMaxElement = function(arr) {
+//  Максимальный элемент в массиве TIMES
+var getMaxElement = function (arr) {
 
   var maxElement = arr[0];
     for (var i = 1; i < arr.length; i++) {
@@ -38,7 +37,7 @@ var getMaxElement = function(arr) {
   return Math.ceil(maxElement);
 };
 
-// Случайное целое число для цвета гистограммы
+//  Случайное целое число для цвета гистограммы
 
 var randomInteger = function (min, max) {
   var rand = min - 0.5 + Math.random() * (max - min + 1);
@@ -47,7 +46,7 @@ var randomInteger = function (min, max) {
   return rand;
 };
 
-window.renderStatistics = function(ctx, players, times) {
+window.renderStatistics = function (ctx, players, times) {
 
   var maxTime = getMaxElement(times);
 
