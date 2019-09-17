@@ -27,13 +27,12 @@ var renderCloud = function (ctx, x, y, color) {
 
 //  Максимальный элемент в массиве TIMES
 var getMaxElement = function (arr) {
-
-  var maxElement = arr[0];
-    for (var i = 1; i < arr.length; i++) {
-      if (maxElement < arr[i]) {
-        maxElement = arr[i];
-      }
+var maxElement = arr[0];
+  for (var i = 1; i < arr.length; i++) {
+    if (maxElement < arr[i]) {
+      maxElement = arr[i];
     }
+  }
   return Math.ceil(maxElement);
 };
 
@@ -58,12 +57,12 @@ window.renderStatistics = function (ctx, players, times) {
     ctx.fillStyle = '#000';
     ctx.fillText(players[i], BAR_X + NAMES_GAP * i, TEXT_Y);
     ctx.fillText(Math.ceil(times[i]), BAR_X + NAMES_GAP * i, ((BAR_Y + (-BAR_HEIGHT * times[i]) / maxTime) - GAP));
-    ctx.fillStyle = 'hsl(240,100%, ' + randomInteger(10, 100) + '%)'
+    ctx.fillStyle = 'hsl(240, 100%, ' + randomInteger(10, 100) + ' %)';
 
     if (players[i] === 'Вы') {
       ctx.fillStyle = 'rgba(255, 0, 0, 1)';
     }
-    ctx.fillRect(BAR_X + NAMES_GAP * i, BAR_Y,  BAR_WIDTH, (-BAR_HEIGHT * times[i]) / maxTime);
+    ctx.fillRect(BAR_X + NAMES_GAP * i, BAR_Y, BAR_WIDTH, (-BAR_HEIGHT * times[i]) / maxTime);
   }
 };
 
