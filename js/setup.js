@@ -41,24 +41,23 @@ getAllwizards(getRandomProperties);
 // Добавляем магу имя, цвет глаз и плаща
 var renderWizards = function (wizard) {
   var wizardElement = wizardTemplate.cloneNode(true);
-    wizardElement.querySelector('.wizard-coat').style.fill = wizard.color;
-    wizardElement.querySelector('.wizard-head').style.fill = wizard.color;
-    wizardElement.querySelector('.wizard-eyes').style.fill  = wizard.color;
-    wizardElement.querySelector('.wizard-hands').style.fill = wizard.color;
-    wizardElement.querySelector('.setup-similar-label').textContent = wizard.name;
+  wizardElement.querySelector('.wizard-coat').style.fill = wizard.color;
+  wizardElement.querySelector('.wizard-head').style.fill = wizard.color;
+  wizardElement.querySelector('.wizard-eyes').style.fill = wizard.color;
+  wizardElement.querySelector('.wizard-hands').style.fill = wizard.color;
+  wizardElement.querySelector('.setup-similar-label').textContent = wizard.name;
 
   return wizardElement;
 };
-console.log(wizards[1].coatcolor);
 
 // Создаем DOM элемент
-var addWizardsElement = function (wizards_list) {
-  var fragment =document.createDocumentFragment();
+var addWizardsElement = function (wizardsList) {
+  var fragment = document.createDocumentFragment();
   for (var y = 0; y < WIZARDS_NUMBER; y++) {
     fragment.appendChild(renderWizards(wizards[y]));
   }
 
-  return wizards_list.appendChild(fragment);
+  return wizardsList.appendChild(fragment);
 };
 
 addWizardsElement(similarListWizards);
