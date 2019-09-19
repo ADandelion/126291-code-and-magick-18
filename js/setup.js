@@ -51,7 +51,7 @@ var renderWizards = function (wizard) {
 };
 
 // Создаем DOM элемент
-var addWizardsElement = function (wizardsList) {
+var addWizardsList = function (wizardsList) {
   var fragment = document.createDocumentFragment();
   for (var y = 0; y < WIZARDS_NUMBER; y++) {
     fragment.appendChild(renderWizards(wizards[y]));
@@ -60,7 +60,7 @@ var addWizardsElement = function (wizardsList) {
   return wizardsList.appendChild(fragment);
 };
 
-addWizardsElement(similarListWizards);
+addWizardsList(similarListWizards);
 
 userDialog.querySelector('.setup-similar').classList.remove('hidden');
 
