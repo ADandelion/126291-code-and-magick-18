@@ -112,11 +112,11 @@ setupOpen.addEventListener('click', function () {
 });
 
 // Открываем окно настройки мага клавишей ENTER, если фокус находится на аватарке
- setupOpen.addEventListener('keydown', function (evt){
-   if (evt.keyCode === KEYCODES.ENTER) {
+setupOpen.addEventListener('keydown', function (evt) {
+  if (evt.keyCode === KEYCODES.ENTER) {
     openPopup();
-   }
- });
+  }
+});
 
 // Закрываем окно настройки мага по клику на иконку "Крестик"
 setupClose.addEventListener('click', function () {
