@@ -68,7 +68,7 @@ addWizardsList(similarListWizards);
 userDialog.querySelector('.setup-similar').classList.remove('hidden');
 
 
-//ОБРАБОТКА СОБЫТИЙ
+// ОБРАБОТКА СОБЫТИЙ
 var KEYCODES = {
   'ESC': 27,
   'ENTER': 13
@@ -76,7 +76,7 @@ var KEYCODES = {
 
 var setup = document.querySelector('.setup');
 var setupOpen = document.querySelector('.setup-open');
-var setupClose= setup.querySelector('.setup-close');
+var setupClose = setup.querySelector('.setup-close');
 var wizardCoat = document.querySelector('.wizard-coat');
 var wizardEyes = document.querySelector('.wizard-eyes');
 var wizardFireBall = document.querySelector('.setup-fireball-wrap');
@@ -99,7 +99,7 @@ var closePopup = function () {
 };
 
 
-blockInput.addEventListener('focus', function (){
+blockInput.addEventListener('focus', function () {
 });
 
 // Открываем или закрываем окно настройки мага по КЛИКУ на аватарку
@@ -111,47 +111,47 @@ setupOpen.addEventListener('click', function () {
   }
 });
 
-//Открываем окно настройки мага клавишей ENTER, если фокус находится на аватарке
+// Открываем окно настройки мага клавишей ENTER, если фокус находится на аватарке
  setupOpen.addEventListener('keydown', function (evt){
    if (evt.keyCode === KEYCODES.ENTER) {
     openPopup();
    }
  });
 
-//Закрываем окно настройки мага по клику на иконку "Крестик"
+// Закрываем окно настройки мага по клику на иконку "Крестик"
 setupClose.addEventListener('click', function () {
   setup.classList.add('hidden');
 });
 
-//Закрываем окно настройки мага клавишей ENTER, если фокус находится на иконке "Крестик"
+// Закрываем окно настройки мага клавишей ENTER, если фокус находится на иконке "Крестик"
 setupClose.addEventListener('keydown', function (evt) {
   if (evt.keyCode === KEYCODES.ENTER) {
     closePopup();
   }
 });
 
-//Закрываем окно настройки мага клавишей ESC
+// Закрываем окно настройки мага клавишей ESC
 setupClose.addEventListener('keydown', function (evt) {
   if (evt.keyCode === KEYCODES.ESC) {
     closePopup();
   }
 });
 
-//По клику менять цвет мантии
+// По клику менять цвет мантии
 wizardCoat.addEventListener('click', function () {
   var colorCoat = getRandomProperties(WIZARD_COATCOLOR);
   document.querySelector('.wizard-coat').style.fill = colorCoat;
   document.querySelector('input[name = "coat-color"]').value = colorCoat;
 });
 
-//По клику менять цвет глаз
+// По клику менять цвет глаз
 wizardEyes.addEventListener('click', function () {
   var colorEyes = getRandomProperties(WIZARD_EYECOLOR);
   document.querySelector('.wizard-eyes').style.fill = colorEyes;
   document.querySelector('input[name = "eyes-color"]').value = colorEyes;
 });
 
-//По клику менять цвет Фаербола
+// По клику менять цвет Фаербола
 wizardFireBall.addEventListener('click', function () {
   var colorFireBall = getRandomProperties(WIZARD_FIREBALL);
   wizardFireBall.style.background = colorFireBall;
