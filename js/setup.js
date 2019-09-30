@@ -93,7 +93,7 @@ var openPopup = function () {
   setup.classList.remove('hidden');
   document.addEventListener('keydown', pressEscClosePopUpHandler);
 
-  setup.addEventListener('click', function(){
+  setup.addEventListener('click', function () {
     if (document.activeElement === blockInput) {
       document.removeEventListener('keydown', pressEscClosePopUpHandler);
     } else {
