@@ -92,15 +92,19 @@ var pressEscClosePopUpHandler = function (evt) {
 var openPopup = function () {
   setup.classList.remove('hidden');
   document.addEventListener('keydown', pressEscClosePopUpHandler);
+
+  setup.addEventListener('click', function(){
+    if (document.activeElement === blockInput) {
+      document.removeEventListener('keydown', pressEscClosePopUpHandler);
+    } else {
+      document.addEventListener('keydown', pressEscClosePopUpHandler);
+    }
+  });
 };
 
 var closePopup = function () {
   setup.classList.add('hidden');
 };
-
-
-blockInput.addEventListener('focus', function () {
-});
 
 // Открываем или закрываем окно настройки мага по КЛИКУ на аватарку
 setupOpen.addEventListener('click', function () {
